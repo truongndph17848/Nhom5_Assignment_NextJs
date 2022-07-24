@@ -1,11 +1,11 @@
 import "../styles/globals.scss";
 import { SWRConfig } from "swr";
 import instance from "@/api/instance";
-import Layout from "@/components/Layout";
+import WebsiteLayout from "@/components/Layout/WebsiteLayout";
 import { AppPropsWithLayout } from "@/models/layout";
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-    const LayoutWrapper = Component.Layout ?? Layout;
+    const LayoutWrapper = Component.WebsiteLayout ?? WebsiteLayout;
     return (
         <LayoutWrapper>
             <SWRConfig value={{ fetcher: async (url) => await instance.get(url) }}>

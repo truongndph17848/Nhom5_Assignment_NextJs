@@ -4,12 +4,17 @@ import Auth from "../Auth";
 
 const LayoutAdmin = ({ children }: LayoutProps) => {
     return (
-        <Auth>
-            <div className="grid grid-cols-[200px,auto]">
-                <div>Sidebar</div>
+        // <Auth>
+            <div>
+
+            {/* Header admin CODE Ở ĐÂY , ko thì tách riêng ra */}
+
                 <div>{children}</div>
+
+            {/* Footer admin CODE Ở ĐÂY */}
+
             </div>
-        </Auth>
+        // </Auth>
     );
 };
 
