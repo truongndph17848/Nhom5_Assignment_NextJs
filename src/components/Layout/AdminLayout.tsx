@@ -8,6 +8,7 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
             <div>
 
             {/* Header admin CODE Ở ĐÂY , ko thì tách riêng ra */}
+        <h1>admin</h1>
 
                 <div>{children}</div>
 
