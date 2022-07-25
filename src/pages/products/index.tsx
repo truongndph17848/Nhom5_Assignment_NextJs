@@ -4,8 +4,7 @@ import Link from "next/link";
 // client
 const ProductPage = () => {
     const { data, error } = useProducts();
-    if (error) return <div>failed to load</div>;
-    if (!data) return <div>loading...</div>;
+n
     return (
         <div>
             {data.map((item) => (

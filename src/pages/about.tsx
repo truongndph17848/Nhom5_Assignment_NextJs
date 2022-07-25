@@ -1,5 +1,6 @@
 
 import LayoutAdmin from '@/components/Layout/AdminLayout'
+import WebsiteLayout from '@/components/Layout/WebsiteLayout'
 
 import React from 'react'
 
@@ -16,6 +17,6 @@ const About = (props: Props) => {
   )
 }
 
-About.layout = LayoutAdmin
+// About.LayoutAdmin = LayoutAdmin
 
 export default About
