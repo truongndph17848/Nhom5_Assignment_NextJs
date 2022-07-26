@@ -6,7 +6,7 @@ type ProductsProps = {
   products: any[];
 }
 
-const listProduct = ({products}: ProductsProps) => {
+const listProduct = ({ products }: ProductsProps) => {
 
   const { data, error, remove } = useProducts();
   if (error) return <div>failed to load</div>;
@@ -15,36 +15,36 @@ const listProduct = ({products}: ProductsProps) => {
   return (
     <div>
 
-         
 
-    <table border='1px'>
-      <thead>
-        <tr>
-          <th>Stt</th>
-          <th> Name</th>
-          <th colSpan={2}>  <button> <Link href="product/create"> Thêm sản phẩm </Link> </button> </th>
+
+      <table border='1px'>
+        <thead>
+          <tr>
+            <th>Stt</th>
+            <th> Name</th>
+            <th colSpan={2}>  <button> <Link href="product/create"> Thêm sản phẩm </Link> </button> </th>
           </tr>
-      </thead>
+        </thead>
 
-      <tbody>
-      {data.map((item: any , index:any) => (
-
-        
-        <tr key={index}>
-          <td>{item.id}</td>
-          <td> <Link href={`/products/${item.id}`}>{item.name}</Link> </td>
-          <td><button onClick={() => remove(item.id)}>Delete</button></td>
-          
-          <td></td>
-        </tr>
-      ))}
-
-      </tbody>
-    </table>
+        <tbody>
+          {data.map((item: any, index: any) => (
 
 
+            <tr key={index}>
+              <td>{item.id}</td>
+              <td> <Link href={`/products/${item.id}`}>{item.name}</Link> </td>
+              <td><button onClick={() => remove(item.id)}>Delete</button></td>
 
-  {/* {data.map((item: any) => (
+              <td></td>
+            </tr>
+          ))}
+
+        </tbody>
+      </table>
+
+
+
+      {/* {data.map((item: any) => (
       <div key={item.id}>
           <Link href={`/products/${item.id}`}>{item.name}</Link>
 
@@ -52,7 +52,7 @@ const listProduct = ({products}: ProductsProps) => {
   ))}
 <button onClick={() => create({ id: 14, name: "Product 14" })}>Create</button> */}
 
-</div>
+    </div>
   )
 }
 
