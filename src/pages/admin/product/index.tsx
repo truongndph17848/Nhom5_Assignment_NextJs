@@ -22,7 +22,7 @@ const listProduct = ({products}: ProductsProps) => {
         <tr>
           <th>Stt</th>
           <th> Name</th>
-          <th colSpan={2}>  <button> <Link href="admin/product/create"> Thêm sản phẩm </Link> </button> </th>
+          <th colSpan={2}>  <button> <Link href="product/create"> Thêm sản phẩm </Link> </button> </th>
           </tr>
       </thead>
 
