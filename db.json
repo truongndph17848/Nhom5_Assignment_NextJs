@@ -9,5 +9,20 @@
       "name": "Product 11"
     }
   ],
+  "categories":[
+    {
+      "id":1,
+      "name":"Áo nam"
+    },
+    {
+      "id":2,
+      "name":"Áo nữ"
+    },
+    {
+      "id":3,
+      "name":"Áo mùa đông"
+    }
+
+  ],
   "users": []
 }
