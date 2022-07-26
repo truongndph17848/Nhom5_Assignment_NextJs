@@ -63,7 +63,7 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
 
       </li>
       <li className="mt-0.5 w-full">
-        <a className="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="./pages/billing.html">
+        <a className="py-2.7 text-size-sm ease-nav-brand my-0 mx-4 flex items-center whitespace-nowrap px-4 transition-colors" href="/admin/category">
           <div className="shadow-soft-2xl mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-white bg-center fill-current stroke-0 text-center xl:p-2.5">
             <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
               <title>credit-card</title>
@@ -79,7 +79,7 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
               </g>
             </svg>
           </div>
-          <span className="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Billing</span>
+          <span className="ml-1 duration-300 opacity-100 pointer-events-none ease-soft">Category</span>
         </a>
       </li>
       <li className="mt-0.5 w-full">
@@ -204,7 +204,7 @@ const LayoutAdmin = ({ children }: LayoutProps) => {
         <div className="transition-all duration-200 ease-nav-brand">
           <h6 className="mb-0 text-white">Need help?</h6>
           <p className="mt-0 mb-4 font-semibold leading-tight text-size-xs">Please check our docs</p>
-          <a href="https://www.creative-tim.com/learning-lab/tailwind/html/quick-start/soft-ui-dashboard/" target="_blank" className="inline-block w-full px-8 py-2 mb-0 font-bold text-center text-black uppercase transition-all ease-in bg-white border-0 border-white rounded-lg shadow-soft-md bg-150 leading-pro text-size-xs hover:shadow-soft-2xl hover:scale-102">Documentation</a>
+          <a href="https://www.creative-tim.com/learning-lab/tailwind/html/quick-start/soft-ui-dashboard/" target="_blank" className="inline-block w-full px-8 py-2 mb-0 font-bold text-center text-black uppercase transition-all ease-in bg-white border-0 border-white rounded-lg shadow-soft-md bg-150 leading-pro text-size-xs hover:shadow-soft-2xl hover:scale-102" rel="noreferrer">Documentation</a>
         </div>
       </div>
     </div>
