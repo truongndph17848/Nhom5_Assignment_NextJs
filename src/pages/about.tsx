@@ -17,6 +17,6 @@ const About = (props: Props) => {
   )
 }
 
-// About.LayoutAdmin = LayoutAdmin
+About.Layout = WebsiteLayout
 
 export default About

@@ -6,7 +6,7 @@ export type LayoutProps = {
     children: React.ReactNode;
 };
 export type NextPageWithLayout = NextPage & {
-    WebsiteLayout?: (page: LayoutProps) => ReactElement;
+    Layout?: (page: LayoutProps) => ReactElement;
 };
 
 export type AppPropsWithLayout = AppProps & {
