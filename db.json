@@ -7,6 +7,10 @@
     {
       "id": 11,
       "name": "Product 11"
+    },
+    {
+      "name": "admin",
+      "id": 12
     }
   ],
   "users": []
