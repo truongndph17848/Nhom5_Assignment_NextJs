@@ -1,20 +1,16 @@
-import useProducts from '@/hooks/use-product';
+import useCategories from '@/hooks/use-category';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 
 
-type ProductsProps = {
-    products: any[];
+type CategoryProps = {
+    categories: any[];
   }
 
-  type inputValuves = {
-    name: "string"
-  }
-
-const creatProducts = ({products}: ProductsProps) => {
+const createCategory = ({categories}: CategoryProps) => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { data, error, create } = useProducts();
+    const { data, error, create } = useCategories();
     if (error) return <div>failed to load</div>;
     // if (!data) return <div>loading...</div>;
 
@@ -22,14 +18,15 @@ const creatProducts = ({products}: ProductsProps) => {
 
 
     const onhandleSubmit = (data: any) =>{
-        console.log(data);
+       
         create(data);
+        console.log(data);
 
         // create({...data, products});
     }
     return (
         <div>
-            <h2>them sp</h2>
+            <h2>them danh mục</h2>
 
             <br />
             <br />
@@ -38,7 +35,7 @@ const creatProducts = ({products}: ProductsProps) => {
         <form action="" onSubmit={handleSubmit(onhandleSubmit)}>
 
         <div className="form-group">
-            <label htmlFor=""> Name</label>
+            <label htmlFor=""> Tên danh mục</label>
             <input className='form-control' type="text" {...register("name")}/>
         </div>
          
@@ -53,4 +50,4 @@ const creatProducts = ({products}: ProductsProps) => {
   
 }
 
-export default creatProducts
+export default createCategory
