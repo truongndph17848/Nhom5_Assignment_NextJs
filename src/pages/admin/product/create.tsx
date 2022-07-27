@@ -17,6 +17,7 @@ const creatProducts = ({ products }: ProductsProps) => {
     if (error) return <div>failed to load</div>;
     // if (!data) return <div>loading...</div>;
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
 
