@@ -2,26 +2,26 @@ import useProducts from '@/hooks/use-product';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 
-
 type ProductsProps = {
     products: any[];
-  }
+}
 
-  type inputValuves = {
+type inputValuves = {
     name: "string"
-  }
+}
 
-const creatProducts = ({products}: ProductsProps) => {
+const creatProducts = ({ products }: ProductsProps) => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { data, error, create } = useProducts();
     if (error) return <div>failed to load</div>;
     // if (!data) return <div>loading...</div>;
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
 
-    const onhandleSubmit = (data: any) =>{
+    const onhandleSubmit = (data: any) => {
         console.log(data);
         create(data);
 
@@ -30,27 +30,26 @@ const creatProducts = ({products}: ProductsProps) => {
     return (
         <div>
             <h2>them sp</h2>
-
             <br />
             <br />
             <br />
 
-        <form action="" onSubmit={handleSubmit(onhandleSubmit)}>
+            <form action="" onSubmit={handleSubmit(onhandleSubmit)}>
 
-        <div className="form-group">
-            <label htmlFor=""> Name</label>
-            <input className='form-control' type="text" {...register("name")}/>
+                <div className="form-group">
+                    <label htmlFor=""> Name</label>
+                    <input className='form-control' type="text" {...register("name")} />
+                </div>
+
+                <input type="submit" />
+
+                {/* <button onClick={() => create({ id: 15, name: "Product 15" })}>Create</button> */}
+            </form>
+
         </div>
-         
-         <input type="submit" />
-        
-        {/* <button onClick={() => create({ id: 15, name: "Product 15" })}>Create</button> */}
-        </form>
 
-        </div>
-  
     );
-  
+
 }
 
 export default creatProducts
