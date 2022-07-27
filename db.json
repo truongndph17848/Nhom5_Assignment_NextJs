@@ -13,20 +13,19 @@
       "id": 12
     }
   ],
-  "categories":[
+  "categories": [
     {
-      "id":1,
-      "name":"Áo nam"
+      "id": 1,
+      "name": "Áo nam"
     },
     {
-      "id":2,
-      "name":"Áo nữ"
+      "id": 2,
+      "name": "Áo nữ"
     },
     {
-      "id":3,
-      "name":"Áo mùa đông"
+      "id": 3,
+      "name": "Áo thun"
     }
-
   ],
   "users": []
 }
