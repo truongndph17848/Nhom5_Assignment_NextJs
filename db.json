@@ -1,16 +1,60 @@
 {
   "products": [
     {
-      "id": 10,
-      "name": "Product 10"
+      "id": 1,
+      "name": "Áo Thun Basic",
+      "price": "200,000 VNĐ",
+      "img": "https://cf.shopee.vn/file/28125ada8ed680b446a22b7e5dba8499_tn",
+      "status": "0"
     },
     {
-      "id": 11,
-      "name": "Product 11"
+      "id": 2,
+      "name": "Áo Sweater Nam Nữ",
+      "price": "200,000 VNĐ",
+      "img": "https://cf.shopee.vn/file/4b15e1971f38604c9b74eaff88a0f34f",
+      "status": "1"
     },
     {
-      "name": "admin",
-      "id": 12
+      "id": 3,
+      "name": "Quần Sort Nam",
+      "price": "120,000 VNĐ",
+      "img": "https://bizweb.dktcdn.net/thumb/1024x1024/100/369/522/products/quan-short-nu-mau-den-dkmv-short-basic-1eb4e24c-7159-4acb-8c80-7844f7234ecb.png?v=1605687854023",
+      "status": "1"
+    },
+    {
+      "id": 4,
+      "name": "Quầb Bò Nam ",
+      "price": "200,000 VNĐ",
+      "img": "https://defoxx.vn/upload/jean%20defoxx%20xanh%20nh%E1%BA%A1t%20wash%20-%201_-17-03-2021-14-38-05.jpg",
+      "status": "1"
+    },
+    {
+      "id": 5,
+      "name": "Áo Hoodie",
+      "price": "250,000 VNĐ",
+      "img": "https://vn-test-11.slatic.net/p/1cd974acf977501044eb5b5278565b33.jpg",
+      "status": "1"
+    },
+    {
+      "id": 6,
+      "name": "Váy Nữ",
+      "price": "180,000 VNĐ",
+      "img": "https://luvinus.com/wp-content/uploads/2021/05/cach-phoi-do-cho-nu-15-tuoi-3.jpg",
+      "status": "1"
+    },
+    {
+      "id": 7,
+      "name": "Áo Khoác Cardigan",
+      "price": "300,000 VNĐ",
+      "img": "https://thoitrangteenthienphuc.vn/upload/sanpham/ao-cardigan-ao-khoac-thun-ni-ngoai-tmc-chong-nang-tot-shop3unisex-8531.jpg",
+      "status": "1"
+    },
+    {
+      "id": 8,
+      "name": "Áo Khoác Bomber",
+      "price": "200,000 VNĐ",
+      "img": "https://cf.shopee.vn/file/0dc49f4684fbbec8b567db91a090c3bf",
+      "status": "0"
     }
   ],
   "categories": [
