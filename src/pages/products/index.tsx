@@ -4,7 +4,7 @@ import Link from "next/link";
 // client
 const ProductPage = () => {
     const { data, error } = useProducts();
-n
+
     return (
         <div>
             {data.map((item) => (
