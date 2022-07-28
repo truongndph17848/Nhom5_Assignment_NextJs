@@ -28,6 +28,7 @@ const creatProducts = ({ products }: ProductsProps) => {
         // create({...data, products});
     }
     return (
+
         <div>
             <h2>them sp</h2>
             <br />
@@ -43,7 +44,7 @@ const creatProducts = ({ products }: ProductsProps) => {
 
                 <input type="submit" />
 
-                {/* <button onClick={() => create({ id: 15, name: "Product 15" })}>Create</button> */}
+                <button onClick={() => create({ id: 15, name: "Product 15" })}>Create</button>
             </form>
 
         </div>
