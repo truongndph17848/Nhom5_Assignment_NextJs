@@ -1,13 +1,13 @@
 import useSWR, { useSWRConfig } from "swr";
-import { list, signup } from "../api/auth";
+import { list, register } from "../api/auth";
 
 export const useAuth = (options?) => {
     const { data, error, mutate } = useSWR("/users", { ...options });
 
     // register
 
-    const register = async (user) => {
-        const account = await signup(user);
+    const signup = async (user) => {
+        const account = await register(user);
         mutate([...data, account]);
     };
 
@@ -21,7 +21,7 @@ export const useAuth = (options?) => {
     return {
         data,
         error,
-        register,
+        signup,
         profile,
     };
 };

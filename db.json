@@ -71,5 +71,12 @@
       "name": "Áo thun"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "name": "minhcoka",
+      "email": "minh@gmail.com",
+      "password": "123456",
+      "id": 1
+    }
+  ]
 }
