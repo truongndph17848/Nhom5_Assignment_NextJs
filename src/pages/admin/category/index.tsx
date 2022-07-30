@@ -8,13 +8,14 @@ type CategoryProps = {
 
 const listCategory = ({ categories }: CategoryProps) => {
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const { data, error, remove } = useCategory();
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
 
     return (
         <div>
-            <table border='1px'>
+            <table >
                 <thead>
                     <tr>
                         <th>Stt</th>

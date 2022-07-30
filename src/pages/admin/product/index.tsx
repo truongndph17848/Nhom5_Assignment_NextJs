@@ -35,6 +35,9 @@ const listProduct = ({ products }: ProductsProps) => {
                     <th scope="col" className=" text-base text-center  font-medium text-gray-900 px-6 py-4 text-left border ">
                       Image
                     </th>
+                    <th scope="col" className=" text-base text-center  font-medium text-gray-900 px-6 py-4 text-left border ">
+                      Mô tả
+                    </th>
                     <th scope="col" className="text-base font-medium text-gray-900 px-6 py-4 text-left border">
                       Trạng thái
                     </th>
@@ -55,6 +58,9 @@ const listProduct = ({ products }: ProductsProps) => {
                       </td>
                       <td className="text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap border ">
                         <img src={item.img} alt="" width="120px" />
+                      </td>
+                      <td className="text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap border">
+                        {item.desc}
                       </td>
                       <td className="text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap border">
                         {item.status}
