@@ -1,4 +1,5 @@
 import useProducts from '@/hooks/use-product';
+import { useRouter } from 'next/router';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 
@@ -17,15 +18,17 @@ type inputValuves = {
 
 const creatProducts = ({ products }: ProductsProps) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
+    const router = useRouter()
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const { data, error, create } = useProducts();
     if (error) return <div>failed to load</div>;
     // if (!data) return <div>loading...</div>;
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onhandleSubmit = (data: any) => {
-        console.log(data);
         create(data);
-        // create({...data, products});
+        alert('Thêm nhật thành công')
+        router.push('/admin/product')
     }
     return (
         <div className="bg-white">

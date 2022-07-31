@@ -3,9 +3,10 @@
     {
       "id": 1,
       "name": "Áo Thun Basic",
-      "price": "200,000 VNĐ",
+      "price": "132133555",
       "img": "https://cf.shopee.vn/file/28125ada8ed680b446a22b7e5dba8499_tn",
-      "status": "Còn hàng"
+      "status": "Còn hàng",
+      "desc": ""
     },
     {
       "id": 2,
