@@ -12,3 +12,9 @@ export const removeItem = (id: any) => {
 export const getItem = (id: any) => {
     return instance.get(`/products/${id}`);
 };
+
+
+export const SearchProductByName = (keyword: string) => {
+    const url = `/search?q=${keyword}`;
+    return instance.post(url);
+};
