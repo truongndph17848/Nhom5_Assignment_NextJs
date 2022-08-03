@@ -15,6 +15,9 @@ export const useAuth = (options?) => {
         mutate(`/users/${id}`);
     };
     // login
+    const signin = (user) =>{
+        const 
+    }
 
     // logout
 
