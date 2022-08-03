@@ -1,3 +1,4 @@
+import WebsiteLayout from '@/components/Layout/WebsiteLayout';
 import { useAuth } from '@/hooks/use-auth';
 import React from 'react'
 import { useForm } from 'react-hook-form';
@@ -54,5 +55,6 @@ const Register = ({users}: UserProps) => {
         </div>
   )
 }
+Register.WebsiteLayout = WebsiteLayout
 
 export default Register
