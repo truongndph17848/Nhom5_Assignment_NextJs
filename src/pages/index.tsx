@@ -1,159 +1,97 @@
-import useProducts from "@/hooks/use-product";
-import WebsiteLayout from '@/components/Layout/WebsiteLayout'
+import useProducts from '@/hooks/use-product';
+import WebsiteLayout from '@/components/Layout/WebsiteLayout';
+import Link from 'next/link';
 const Home = () => {
-    const { data, error } = useProducts();
-    if (error) return <div>failed to load</div>;
-    if (!data) return <div>loading...</div>;
-    return (
-        <div>
-            <div className="bg-white">
-                <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-                    <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">Sản phẩm mới nhất</h2>
-                    <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                        <div className="group relative ">
-                            <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://cf.shopee.vn/file/0dc49f4684fbbec8b567db91a090c3bf" alt="Front of men's Basic Tee in black." className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
-                            </div>
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" className="absolute inset-0" />
-                                            Basic Tee
-                                        </a>
-                                    </h3>
-                                </div>
-                                <p className="text-xl font-bold text-red-500">$35</p>
-                            </div>
-                        </div>
-                        <div className="group relative ">
-                            <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://dotobjyajpegd.cloudfront.net/photo/5e9ff51d4841bc1446b3362a" alt="Front of men's Basic Tee in black." className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
-                            </div>
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" className="absolute inset-0" />
-                                            Basic Tee
-                                        </a>
-                                    </h3>
+	const { data, error } = useProducts();
+	console.log(data);
+	if (error) return <div>failed to load</div>;
+	if (!data) return <div>loading...</div>;
+	return (
+		<div className="grid grid-cols-5 gap-4">
+			<div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased  text-gray-800">
+				<div className="flex flex-col left-0 h-full w-64 bg-white border-r">
+					<div className="overflow-y-auto overflow-x-hidden flex-grow">
+						<ul className="flex flex-col py-4 space-y-1">
+							<li className="px-7 mb-5">
+								<div className="flex flex-row items-center h-8">
+									<div className="text-xl font-mono font-bold tracking-wide text-gray-500 text-center">
+										Danh mục sản phẩm
+									</div>
+								</div>
+							</li>
+							<li className="px-7">
+								<a
+									href="#"
+									className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+								>
+									<span className="ml-2 text-base font-mono tracking-wide truncate">Thời trang nam</span>
+                                    <span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-indigo-500 bg-indigo-50 rounded-full">
+										20
+									</span>
+                                </a>
+							</li>
+							<li className="px-7">
+								<a
+									href="#"
+									className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+								>
+									<span className="ml-2 text-base font-mono tracking-wide truncate">Thời trang nữ</span>
+									<span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-indigo-500 bg-indigo-50 rounded-full">
+										10
+									</span>
+								</a>
+							</li>
+							<li className="px-7">
+								<a
+									href="#"
+									className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+								>
+									<span className="ml-2 text-base font-mono tracking-wide truncate">Messages</span>
+								</a>
+							</li>
+							<li className="px-7">
+								<a
+									href="#"
+									className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+								>
+									<span className="ml-2 text-base font-mono tracking-wide truncate">Notifications</span>
+									<span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">
+										1.2k
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
-                                </div>
-                                <p className="text-xl font-bold text-red-500">$35</p>
-                            </div>
-                        </div>
-                        <div className="group relative ">
-                            <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://dotobjyajpegd.cloudfront.net/photo/5e9ff5264841bc1446b3365e_m" alt="Front of men's Basic Tee in black." className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
-                            </div>
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" className="absolute inset-0" />
-                                            Basic Tee
-                                        </a>
-                                    </h3>
-
-                                </div>
-                                <p className="text-xl font-bold text-red-500">$35</p>
-                            </div>
-                        </div>
-                        <div className="group relative ">
-                            <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://vn-test-11.slatic.net/p/93f302f0def7b9fe065573be16234d72.jpg" alt="Front of men's Basic Tee in black." className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
-                            </div>
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" className="absolute inset-0" />
-                                            Basic Tee
-                                        </a>
-                                    </h3>
-
-                                </div>
-                                <p className="text-xl font-bold text-red-500">$35</p>
-                            </div>
-                        </div>
-                        <div className="group relative ">
-                            <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://cf.shopee.vn/file/2729293025883f31fab8ceb7c7e8538c" alt="Front of men's Basic Tee in black." className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
-                            </div>
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" className="absolute inset-0" />
-                                            Basic Tee
-                                        </a>
-                                    </h3>
-
-                                </div>
-                                <p className="text-xl font-bold text-red-500">$35</p>
-                            </div>
-                        </div>
-                        <div className="group relative ">
-                            <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://cf.shopee.vn/file/d8864ed7973c8b31de1d891a4e1dc87a" alt="Front of men's Basic Tee in black." className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
-                            </div>
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" className="absolute inset-0" />
-                                            Basic Tee
-                                        </a>
-                                    </h3>
-
-                                </div>
-                                <p className="text-xl font-bold text-red-500">$35</p>
-                            </div>
-                        </div>
-                        <div className="group relative ">
-                            <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://cf.shopee.vn/file/ef42c9312f0d3116e98e73921ccef01a" alt="Front of men's Basic Tee in black." className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
-                            </div>
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" className="absolute inset-0" />
-                                            Basic Tee
-                                        </a>
-                                    </h3>
-
-                                </div>
-                                <p className="text-xl font-bold text-red-500">$35</p>
-                            </div>
-                        </div>
-                        <div className="group relative ">
-                            <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img src="https://toplist.vn/images/800px/odin-custom-dien-bien-747474.jpg" alt="Front of men's Basic Tee in black." className="w-full h-full object-center object-cover lg:w-full lg:h-full" />
-                            </div>
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <a href="#">
-                                            <span aria-hidden="true" className="absolute inset-0" />
-                                            Basic Tee
-                                        </a>
-                                    </h3>
-
-                                </div>
-                                <p className="text-xl font-bold text-red-500">$35</p>
-                            </div>
-                        </div>
-                        {/* More products... */}
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    );
+			<div className="bg-white col-span-4">
+				<div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+					<div className="mt-3 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+						{data.map((item: any, index: any) => (
+							<div key={index} className="group relative">
+								<div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+									<img
+										src={item.img}
+										className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+									/>
+								</div>
+								<div className="mt-4 text-center">
+									<Link href={`products/${item.id}`}>
+										<h3 className="cursor-pointer text-sm text-gray-700">{item.name}</h3>
+									</Link>
+									<p className="text-sm font-bold text-red-900 ">
+										200.000 <span className="line-through text-gray-500">250.000</span>
+									</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
-
 
 Home.WebsiteLayout = WebsiteLayout;
 // Home.LayoutAdmin = LayoutAdmin
