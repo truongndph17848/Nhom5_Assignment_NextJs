@@ -15,7 +15,14 @@ export const useAuth = (options?) => {
         mutate(`/users/${id}`);
     };
     // login
+    const signin = async (user) => {
+        const account = await login(user);
+        mutate([...data, account]);
+    };
 
+    const profiles = (url) => {
+        mutate(url)
+    }
 
     // logout
 
@@ -23,6 +30,8 @@ export const useAuth = (options?) => {
         data,
         error,
         signup,
+        signin,
+        profiles,
         profile,
     };
 };
