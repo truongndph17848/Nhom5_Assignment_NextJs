@@ -1,4 +1,3 @@
-
 import instance from "./instance";
 
 export const register = (user) => {

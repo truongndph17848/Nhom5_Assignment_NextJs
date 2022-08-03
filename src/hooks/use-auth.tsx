@@ -20,6 +20,7 @@ export const useAuth = (options?) => {
         mutate([...data, account]);
     };
 
+
     const profiles = (url) => {
         mutate(url)
     }
