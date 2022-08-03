@@ -1,6 +1,7 @@
 import WebsiteLayout from '@/components/Layout/WebsiteLayout';
 import { useAuth } from '@/hooks/use-auth';
 import React from 'react'
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
 type UserProps = {
@@ -14,6 +15,7 @@ type inputValues={
 }
 
 const Register = ({users}: UserProps) => {
+    const router = useRouter ()
     const {data, error, signup} = useAuth();
     if (error) return <div>Fail to load</div>;
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -21,6 +23,7 @@ const Register = ({users}: UserProps) => {
     function onSubmit(data: any): void {
         console.log(data);
         signup(data);
+        router.push('/auth/login')
     }
   return (
 
