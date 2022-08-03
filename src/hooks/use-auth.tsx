@@ -1,5 +1,5 @@
 import useSWR, { useSWRConfig } from "swr";
-import { list, register } from "../api/auth";
+import { login, register } from "../api/auth";
 
 export const useAuth = (options?) => {
     const { data, error, mutate } = useSWR("/users", { ...options });
@@ -15,9 +15,7 @@ export const useAuth = (options?) => {
         mutate(`/users/${id}`);
     };
     // login
-    const signin = (user) =>{
-        const 
-    }
+
 
     // logout
 
