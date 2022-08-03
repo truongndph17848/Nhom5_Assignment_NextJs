@@ -41,7 +41,7 @@ const editProducts = (props: Props) => {
                 <div className="mb-3 grid grid-cols-2 gap-6">
                     <div>
                         <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Giá tiền<span className="text-red-500">*</span></label><br />
-                        <input type="number" {...register('price')} className="border border-gray-300 p-2 w-full" id="price" />
+                        <input type="string" {...register('price')} className="border border-gray-300 p-2 w-full" id="price" />
                     </div>
 
                     <div>
