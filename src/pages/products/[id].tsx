@@ -268,6 +268,10 @@ const product_current = {
 
   );
 }
+ProductDetail.WebsiteLayout = WebsiteLayout
+
+
+
 const mapDispatchToProps = (dispatch) => {
   return {
     buyProduct: (product_current) => dispatch(buyProduct(product_current)),
@@ -280,4 +284,3 @@ const mapStateToProps = (state) => {
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);
 
-ProductDetail.WebsiteLayout = WebsiteLayout

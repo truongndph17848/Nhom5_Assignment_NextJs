@@ -7,20 +7,20 @@ import { deleteProduct } from "../../pages/products/actions/action";
 
 function Cart(props) {
     return ( <
-        div >
-        GIỎ HÀNG <
-        div style = {
-            {
-                width: "100%",
-                backgroundColor: "white",
-                height: "100vh",
-                padding: "20px",
-                paddingLeft: "100px",
-                textAlign: "start",
-            }
-        } >
-        <
-        h1 > hien thi cart < /h1> {
+            div >
+            GIỎ HÀNG <
+            div style = {
+                {
+                    width: "100%",
+                    backgroundColor: "white",
+                    height: "100vh",
+                    padding: "20px",
+                    paddingLeft: "100px",
+                    textAlign: "start",
+                }
+            } >
+            <
+            h1 > hien thi cart < /h1> {
             /* {props?.cart.map((product) => (
                       <div key={product.id} style={{ display: "flex" }}>
                         <div style={{ width: "30%" }}>{`${product.name}`}</div>
@@ -37,9 +37,9 @@ function Cart(props) {
                       </div>
                     ))} */
         } <
-        /div> <
-        /div>
-    );
+        /div> < /
+        div >
+);
 }
 
 
