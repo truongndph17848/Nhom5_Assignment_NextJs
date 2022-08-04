@@ -1,6 +1,8 @@
 import WebsiteLayout from '@/components/Layout/WebsiteLayout'
+import { useRouter } from 'next/router'
 import React from 'react'
 import Slider from 'react-slick'
+import useSWR from 'swr'
 
 type Props = {}
 
@@ -12,6 +14,13 @@ const ProductDetail = (props: Props) => {
         slidesToShow: 4,
         slidesToScroll: 1
       };
+    const router = useRouter();
+    const { id } = router.query
+    const { data, error } = useSWR(id ? `/products/${id}` : null);
+    if (!data) <div>Loading...</div>;
+    if (error) <div>Error</div>;
+    console.log(data);
+    
   return (
     <div>
         <link
@@ -27,10 +36,10 @@ const ProductDetail = (props: Props) => {
         <section className="text-gray-700 body-font overflow-hidden bg-white">
             <div className="container px-5 py-4 mx-auto">
                 <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                <img alt="ecommerce" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="https://www.whitmorerarebooks.com/pictures/medium/2465.jpg" />
+                <img alt="ecommerce" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src={data?.img} />
                 <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                    <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">The Catcher in the Rye</h1>
-                    <h2 className="text-xl title-font text-red-500 tracking-widest">1.000.000</h2>
+                    <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{data?.name}</h1>
+                    <h2 className="text-xl title-font text-red-500 tracking-widest">{data?.price}</h2>
                     <div className="flex mb-4">
                     <span className="flex items-center">
                         <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
