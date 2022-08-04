@@ -8,15 +8,19 @@ import instance from "@/api/instance";
 import { AppPropsWithLayout } from "@/models/layout";
 import WebsiteLayout from "@/components/Layout/AdminLayout";
 import LayoutAdmin from "@/components/Layout/AdminLayout";
+import { Provider } from "react-redux";
+import store from "../store";
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     const LayoutWrapper = Component.WebsiteLayout ?? WebsiteLayout;
     return (
+        <Provider store={store}>
         <LayoutWrapper>
             <SWRConfig value={{ fetcher: async (url) => await instance.get(url) }}>
                 <Component {...pageProps} />
             </SWRConfig>
         </LayoutWrapper>
+        </Provider>
     );
 }
 export default MyApp;
