@@ -4,9 +4,14 @@ import React from 'react'
 import Slider from 'react-slick'
 import useSWR from 'swr'
 
-type Props = {}
 
-const ProductDetail = (props: Props) => {
+
+import { buyProduct } from "./actions/action";
+import { connect } from "react-redux";
+
+
+
+function ProductDetail(props) {
     const settings = {
         dots: false,
         autoPlay: true,
@@ -14,14 +19,27 @@ const ProductDetail = (props: Props) => {
         slidesToShow: 4,
         slidesToScroll: 1
       };
+
     const router = useRouter();
     const { id } = router.query
     const { data, error } = useSWR(id ? `/products/${id}` : null);
     if (!data) <div>Loading...</div>;
     if (error) <div>Error</div>;
     console.log(data);
+
+
     
+const product_current = {
+    id: data?.id,
+    img: data?.img,
+    name: data?.name,
+    price: data?.price,
+  };
+
+  
   return (
+
+    
     <div>
         <link
         rel="stylesheet"
@@ -98,7 +116,7 @@ const ProductDetail = (props: Props) => {
                     </div>
                     <div className="flex">
                     <button className="text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Mua Ngay</button>
-                    <button className="ml-5 text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Thêm vào giỏ hàng</button>
+                    <button className="ml-5 text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"    onClick={() => props.buyProduct(product_current)} >Thêm vào giỏ hàng</button>
                     </div>
                 </div>
                 </div>
@@ -247,9 +265,19 @@ const ProductDetail = (props: Props) => {
         </div>
 
     </div>
-  )
+
+  );
 }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    buyProduct: (product_current) => dispatch(buyProduct(product_current)),
+  };
+};
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart.cartAr,
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);
 
 ProductDetail.WebsiteLayout = WebsiteLayout
-
-export default ProductDetail
