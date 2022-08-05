@@ -1,5 +1,6 @@
 import * as actionType from "../actions/actionType";
 
+
 const initialState = {
     cartAr: [],
 
@@ -12,6 +13,7 @@ const cartReducer = (state = initialState, action) => {
         case actionType.BUY_PRODUCT:
             const productInCart = state.cartAr.find(
                 (p) => p.id === action.payload.id
+
             );
             if (!productInCart) {
                 return {

@@ -1,8 +1,57 @@
-import React from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { LayoutProps } from '@/models/layout';
 import Slide from '../Slider';
+import { Router } from 'react-router-dom';
+import { useRouter } from 'next/router';
+import { searchProduct } from '@/api/product';
+import { toast } from 'react-toastify';
+import { Product } from './productType';
+import useProducts from '@/hooks/use-product';
+import useSWR from 'swr';
+
+
+type ProductsProps = {
+	products: any[];
+  }
+
 
 const WebsiteLayout = ({ children }: LayoutProps) => {
+
+	const router = useRouter();
+	const [search, setSearch] = useState("");
+	const [products, setProducts] = useState<any>();
+
+
+
+	const handleSearchChange = async (e: ChangeEvent<HTMLInputElement>) => {
+	  const searchStr = e.target.value;
+	  setSearch(searchStr);
+
+	  const products = await searchProduct(searchStr);
+	  setProducts(products);
+	  
+	  console.log("products", products);
+
+	  
+	};
+  
+
+
+
+	const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
+	  e.preventDefault();
+  
+	  if (!search.trim()) {
+		toast.info("Vui lòng nhập tên SP");
+		return;
+	  }
+	  router.push(`/search/${search}`);
+
+
+	
+	};
+	
+
 	return (
 		<div className='container'>
 			{/* Header website CODE Ở ĐÂY */}
@@ -70,14 +119,32 @@ const WebsiteLayout = ({ children }: LayoutProps) => {
 							</ul>
 						</nav>
 					</div>
+
+
+
+
+
 					<div className="order-2 md:order-3">
+					<form action="" className="flex" onSubmit={handleSearchSubmit}>
 						<input
 							type="text"
+							onChange={handleSearchChange}
 							id="table-search"
 							className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 							placeholder="Tìm kiếm sản phẩm"
 						/>
+						</form>
 					</div>
+
+
+
+
+
+
+
+
+
+
 					<div className="order-3 md:order-4 flex items-center" id="nav-content">
 						<a href="#" role="button" className="relative flex mr-3">
 							<svg className="flex-1 w-8 h-8 fill-current" viewBox="0 0 24 24">

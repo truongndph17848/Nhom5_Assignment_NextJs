@@ -15,7 +15,7 @@ export const read = (id: any) => {
 export const update = (product: any) => {
     return instance.put(`/products/${product.id}`, product);
 };
-export const SearchProductByName = (keyword: string) => {
-    const url = `/search?q=${keyword}`;
-    return instance.post(url);
+export const searchProduct = (search: any) => {
+    const url = `/products?q=${search}`;
+    return instance.get(url);
 };
