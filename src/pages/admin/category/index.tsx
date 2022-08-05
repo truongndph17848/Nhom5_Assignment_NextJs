@@ -44,7 +44,7 @@ const listCategory = ({ categories }: CateProps) => {
                       </td>
                       <td className='border '>
                         <button className='bg-red-300 px-2 py-2 text-center border' onClick={() => remove(item.id)}>Delete</button>
-                        <button className="bg-blue-300 px-2 py-2 text-center border "> <Link href={`product/${item.id}`}>Edit</Link></button>
+                        <button className="bg-blue-300 px-2 py-2 text-center border "> <Link href={`category/${item.id}`}>Edit</Link></button>
                       </td>
                     </tr>
                   ))}
