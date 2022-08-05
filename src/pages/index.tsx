@@ -1,11 +1,18 @@
 import useProducts from '@/hooks/use-product';
 import WebsiteLayout from '@/components/Layout/WebsiteLayout';
 import Link from 'next/link';
-const Home = () => {
+import { GetStaticProps } from 'next';
+
+type Props = {
+	categories: any[]
+}
+const Home = ({categories}: Props) => {
 	const { data, error } = useProducts();
 	console.log(data);
 	if (error) return <div>failed to load</div>;
 	if (!data) return <div>loading...</div>;
+
+	console.log(categories)
 	return (
 		<div className="grid grid-cols-5 gap-4">
 			<div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased  text-gray-800">
@@ -19,36 +26,21 @@ const Home = () => {
 									</div>
 								</div>
 							</li>
-							<li className="px-7">
+							{categories.map((item, index)=>{
+								return (
+									<li key={index} className="px-7">
 								<a
 									href="#"
 									className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
 								>
-									<span className="ml-2 text-base font-mono tracking-wide truncate">Thời trang nam</span>
+									<span className="ml-2 text-base font-mono tracking-wide truncate">{item?.name}</span>
                                     <span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-indigo-500 bg-indigo-50 rounded-full">
 										20
 									</span>
                                 </a>
 							</li>
-							<li className="px-7">
-								<a
-									href="#"
-									className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
-								>
-									<span className="ml-2 text-base font-mono tracking-wide truncate">Thời trang nữ</span>
-									<span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-indigo-500 bg-indigo-50 rounded-full">
-										10
-									</span>
-								</a>
-							</li>
-							<li className="px-7">
-								<a
-									href="#"
-									className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
-								>
-									<span className="ml-2 text-base font-mono tracking-wide truncate">Messages</span>
-								</a>
-							</li>
+								)
+							})}
 							<li className="px-7">
 								<a
 									href="#"
@@ -94,6 +86,17 @@ const Home = () => {
 };
 
 Home.WebsiteLayout = WebsiteLayout;
-// Home.LayoutAdmin = LayoutAdmin
+
+export const getStaticProps: GetStaticProps = async() => {
+	const res = await fetch('http://localhost:3001/categories')
+	const categories = await res.json()
+
+return {
+	props: {
+		categories,
+	},
+	revalidate: 60
+}
+}
 
 export default Home;
