@@ -1,28 +1,24 @@
+import { login } from '@/api/auth';
 import WebsiteLayout from '@/components/Layout/WebsiteLayout';
-import { useAuth } from '@/hooks/use-auth';
 import { useRouter } from 'next/router';
 import React from 'react'
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
-type UserProps = {
-    users: any[];
-}
 
 type inputValues={
     email:string,
     password:string
 }
 
-const Login = ({users}: UserProps) => {
-    const router = useRouter ()
-
-    const {data, error, signin} = useAuth();
-    if (error) return <div>Fail to load</div>;
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const {register, handleSubmit, watch, formState:{errors}} = useForm();
-    function onSubmit(data: any): void {
+const Login = () => {
+    const router = useRouter()
+    const {register, handleSubmit, formState:{errors}} = useForm<inputValues>();
+    const onSubmit: SubmitHandler<inputValues> = async (data) => {
+        const user = await login(data);
         console.log(data);
-        signin(data);
+        if(data) {
+            localStorage.setItem('User', JSON.stringify(user))
+        }
         router.push('/')
     }
   return (
@@ -31,7 +27,7 @@ const Login = ({users}: UserProps) => {
             <div className="container mx-auto">
                 <div className="max-w-md mx-auto my-10 border border-gray-300 rounded-md">
                     <div className="text-center">
-                        <h1 className="my-3 text-3xl font-semibold text-gray-700">Xin chào👋, vui lòng đăng kí tài khoản để sử dụng các chức năng</h1>
+                        <h1 className="my-3 text-3xl font-semibold text-gray-700">Đăng nhập tài khoản</h1>
                     </div>
                     <div className="m-7">
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -46,7 +42,7 @@ const Login = ({users}: UserProps) => {
                             <div className="mb-6">
                                 <button className="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Đăng nhập</button>
                             </div>
-                            <p className="text-sm text-center text-gray-400">Bạn đã có tài khoản? <a href="/admin/products" className="text-indigo-400 focus:outline-none focus:underline focus:text-indigo-500 dark:focus:border-indigo-800 hover:text-orange-700">Đăng nhập</a>.</p>
+                            <p className="text-sm text-center text-gray-400">Bạn chưa có tài khoản? <a href="/admin/products" className="text-indigo-400 focus:outline-none focus:underline focus:text-indigo-500 dark:focus:border-indigo-800 hover:text-orange-700">Đăng kí</a>.</p>
                         </form>
                     </div>
                 </div>
