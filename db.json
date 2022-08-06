@@ -82,6 +82,18 @@
       "password": "$2a$10$gkDnqyWvS11JO89rhOG6dehi4G.CC9Xfp90S16phuiR9sLUPKTIga",
       "name": "dung",
       "id": 1
+    },
+    {
+      "email": "minh@gmail.com",
+      "password": "$2a$10$m5p/ES4XvvJCUFp3ClXDIOV0R4Rv09CK.d9YXsUjiiQ8eVAyUT4l2",
+      "name": "quần",
+      "id": 2
+    },
+    {
+      "email": "minhkbph17672@fpt.edu.vn",
+      "password": "$2a$10$XSiCI83BHS7a0BXMyiNUlOvvS1mJt2.q2oOLIopN4tQyUx9clQlu6",
+      "name": "điện thoại apple",
+      "id": 3
     }
   ]
 }
