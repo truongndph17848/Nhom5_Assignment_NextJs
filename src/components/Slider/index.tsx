@@ -6,9 +6,9 @@ type Props = {};
 
 const Slide = (props: Props) => {
   const images = [
-    "https://png.pngtree.com/thumb_back/fw800/back_our/20190622/ourmid/pngtree-chinese-style-landscape-simple-background-banner-image_233752.jpg",
-    "https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-landscape-ink-wind-antique-background-banner-background-windlandscapepavilionink-landscape-background-image_77507.jpg",
-    "https://png.pngtree.com/thumb_back/fw800/back_our/20190622/ourmid/pngtree-chinese-style-patina-scenic-tourist-attractions-punch-card-banner-image_230152.jpg"
+    "https://sixdo.vn/images/banners/original/ngang-nho-1658296369.jpg",
+    "//bizweb.sapocdn.net/100/438/408/themes/863105/assets/page_nam_slider_1.jpg?1659777315508",
+    "https://theme.hstatic.net/1000026602/1000835746/14/img-banner-index.jpg?v=4674"
   ];
   const zoomInProperties = {
     indicators: true,
