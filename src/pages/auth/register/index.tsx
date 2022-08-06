@@ -19,7 +19,7 @@ const Register = ({users}: UserProps) => {
     const {data, error, signup} = useAuth();
     if (error) return <div>Fail to load</div>;
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const {register, handleSubmit, watch, formState:{errors}} = useForm();
+    const {register, handleSubmit, watch, formState:{errors}} = useForm<inputValues>();
     function onSubmit(data: any): void {
         console.log(data);
         signup(data);
