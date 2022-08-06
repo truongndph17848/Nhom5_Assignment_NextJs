@@ -17,42 +17,33 @@ type ProductsProps = {
 
 
 const WebsiteLayout = ({ children }: LayoutProps) => {
-
 	const router = useRouter();
 	const [search, setSearch] = useState("");
 	const [products, setProducts] = useState<any>();
 
-
-
 	const handleSearchChange = async (e: ChangeEvent<HTMLInputElement>) => {
 	  const searchStr = e.target.value;
 	  setSearch(searchStr);
-
 	  const products = await searchProduct(searchStr);
 	  setProducts(products);
-	  
-	  console.log("products", products);
-
-	  
 	};
   
-
-
-
 	const handleSearchSubmit = (e: FormEvent<HTMLFormElement>) => {
 	  e.preventDefault();
-  
 	  if (!search.trim()) {
 		toast.info("Vui lòng nhập tên SP");
 		return;
 	  }
 	  router.push(`/search/${search}`);
-
-
-	
 	};
-	
 
+	const logOut=() =>{
+		localStorage.removeItem("User");
+		toast.success("Đăng xuất thành công @@")
+		  router.push('/auth/login')
+	}
+
+	
 	return (
 		<div className='container'>
 			{/* Header website CODE Ở ĐÂY */}
@@ -154,8 +145,6 @@ const WebsiteLayout = ({ children }: LayoutProps) => {
 
 
 
-
-
 					<div className="order-3 md:order-4 flex items-center" id="nav-content">
 						<a href="#" role="button" className="relative flex mr-3">
 							<svg className="flex-1 w-8 h-8 fill-current" viewBox="0 0 24 24">
@@ -165,7 +154,7 @@ const WebsiteLayout = ({ children }: LayoutProps) => {
 								5
 							</span>
 						</a>
-						<a className="inline-block no-underline hover:text-black" href="/auth/register">
+						<a className="inline-block no-underline hover:text-black" href="/auth/login">
 							<svg
 								className="fill-current hover:text-black"
 								xmlns="http://www.w3.org/2000/svg"
@@ -177,6 +166,9 @@ const WebsiteLayout = ({ children }: LayoutProps) => {
 								<path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
 							</svg>
 						</a>
+
+						<><button onClick={logOut}>| LogOut</button>
+						</>
 					</div>
 				</div>
 			</nav>
