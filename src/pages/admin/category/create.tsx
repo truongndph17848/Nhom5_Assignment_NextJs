@@ -30,7 +30,9 @@ const createCategory = ({ categories }: CateProps) => {
             <form id="form-add-pro" onSubmit={handleSubmit(onhandleSubmit)}>
                 <div className="mb-3">
                     <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Tên danh mục<span className="text-red-500">*</span></label><br />
-                    <input type="text" {...register('name')} className="border border-gray-300 p-2 w-full" id="name" />
+                    <input type="text" {...register('name', { required: true })} className="border border-gray-300 p-2 w-full" id="name" />
+                    {errors.name && <span className='text-red-600'>Không được để trống !</span>}
+
                 </div>
                 <div className="flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5">
                     <button className="w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2">Cancel</button>
