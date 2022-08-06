@@ -8,26 +8,25 @@ type UserProps = {
     users: any[];
 }
 
-type inputValues={
-    email:string,
-    name:string,
-    password:string
+type inputValues = {
+    email: string,
+    name: string,
+    password: string
 }
 
-const Register = ({users}: UserProps) => {
-    const router = useRouter ()
-    const {data, error, signup} = useAuth();
+const Register = ({ users }: UserProps) => {
+    const router = useRouter()
+    const { data, error, signup } = useAuth();
     if (error) return <div>Fail to load</div>;
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const {register, handleSubmit, watch, formState:{errors}} = useForm<inputValues>();
     function onSubmit(data: any): void {
         console.log(data);
         signup(data);
         router.push('/auth/login')
     }
-  return (
+    return (
 
-     <div className="flex items-center min-h-screen bg-white">
+        <div className="flex items-center min-h-screen bg-white">
             <div className="container mx-auto">
                 <div className="max-w-md mx-auto my-10 border border-gray-300 rounded-md">
                     <div className="text-center">
@@ -37,15 +36,21 @@ const Register = ({users}: UserProps) => {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="mb-6">
                                 <label htmlFor="username" className="block mb-2 text-sm text-gray-600 dark:text-gray-400">User Name</label>
-                                <input type="text" {...register('name')} id="username" placeholder="User Name" className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md" />
+                                <input type="text" {...register('name', { required: true })} id="username" placeholder="User Name" className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md" />
+                                {errors.name && <span className='text-red-600'>Tên không được để trống !</span>}
+
                             </div>
                             <div className="mb-6">
                                 <label htmlFor="email" className="block mb-2 text-sm text-gray-600 dark:text-gray-400">Email Address</label>
-                                <input type="email" {...register('email')} id="email" placeholder="Email" className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md" />
+
+                                {errors.email && <span className='text-red-600'>Email không được để trống !</span>}
+                                <input type="email" {...register('email', { required: true })} id="email" placeholder="Email" className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md" />
                             </div>
                             <div className="mb-6">
                                 <label htmlFor="password" className="text-sm text-gray-600 dark:text-gray-400">Password</label>
-                                <input type="password" {...register('password')} id="password" placeholder="Your Password" className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md" />
+                                <input type="password" {...register('password', { required: true })} id="password" placeholder="Your Password" className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md" />
+                                {errors.password && <span className='text-red-600'>Mật khẩu không được để trống !</span>}
+
                             </div>
                             <div className="mb-6">
                                 <button className="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Đăng Kí</button>
@@ -56,7 +61,7 @@ const Register = ({users}: UserProps) => {
                 </div>
             </div>
         </div>
-  )
+    )
 }
 Register.WebsiteLayout = WebsiteLayout
 
