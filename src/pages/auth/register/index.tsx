@@ -16,6 +16,7 @@ type inputValues = {
 
 const Register = ({ users }: UserProps) => {
     const router = useRouter()
+    const { register, handleSubmit, formState: { errors } } = useForm<inputValues>();
     const { data, error, signup } = useAuth();
     if (error) return <div>Fail to load</div>;
     // eslint-disable-next-line react-hooks/rules-of-hooks
