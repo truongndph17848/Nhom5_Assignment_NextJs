@@ -36,27 +36,35 @@ const creatProducts = ({ products }: ProductsProps) => {
             <form id="form-add-pro" onSubmit={handleSubmit(onhandleSubmit)}>
                 <div className="mb-3">
                     <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Tên sản phẩm<span className="text-red-500">*</span></label><br />
-                    <input type="text" {...register('name')} className="border border-gray-300 p-2 w-full" id="name" />
+                    <input type="text" {...register('name', { required: true, minLength: 5 })} className="border border-gray-300 p-2 w-full" id="name" />
+                    {errors.name && <span className='text-red-600'>Không được để trống và nhập trên 5 kí tự !</span>}
                 </div>
 
                 <div className="mb-3 grid grid-cols-2 gap-6">
                     <div>
                         <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Giá tiền<span className="text-red-500">*</span></label><br />
-                        <input type="number" {...register('price')} className="border border-gray-300 p-2 w-full" id="price" />
+                        <input type="number" {...register('price', { required: true })} className="border border-gray-300 p-2 w-full" id="price" />
+                        {errors.price && <span className='text-red-600'>Không được để trống !</span>}
                     </div>
                     {/* ... */}
                     <div>
                         <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Trạng thái<span className="text-red-500">*</span></label><br />
-                        <input type="string" {...register('status')} className="border border-gray-300 p-2 w-full" id="quantity" />
+                        <input type="string" {...register('status', { required: true })} className="border border-gray-300 p-2 w-full" id="quantity" />
+                        {errors.status && <span className='text-red-600'>Không được để trống !</span>}
+
                     </div>
                 </div>
                 <div className="mb-3">
                     <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Mô tả<span className="text-red-500">*</span></label><br />
-                    <textarea {...register('desc')} className="w-full sec p-3 h-60 border border-gray-300 " id="desc" placeholder="Mô tả sản phẩm" defaultValue={""} />
+                    <textarea {...register('desc', { required: true })} className="w-full sec p-3 h-60 border border-gray-300 " id="desc" placeholder="Mô tả sản phẩm" defaultValue={""} />
+                    {errors.desc && <span className='text-red-600'>Không được để trống !</span>}
+
                 </div>
                 <div className="mb-3">
                     <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Upload Photo<span className="text-red-500">*</span></label><br />
-                    <input type="string" {...register('img')} className="w-full sec p-3 h-30 border border-gray-300 " id="desc" placeholder="Upload ảnh" />
+                    <input type="string" {...register('img', { required: true })} className="w-full sec p-3 h-30 border border-gray-300 " id="desc" placeholder="Upload ảnh" />
+                    {errors.img && <span className='text-red-600'>Không được để trống !</span>}
+
                 </div>
 
                 {/* <div className="mb-3 flex justify-center">

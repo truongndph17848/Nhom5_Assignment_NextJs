@@ -165,7 +165,7 @@ const WebsiteLayout = ({ children }: LayoutProps) => {
 								5
 							</span>
 						</a>
-						<a className="inline-block no-underline hover:text-black" href="#">
+						<a className="inline-block no-underline hover:text-black" href="/auth/register">
 							<svg
 								className="fill-current hover:text-black"
 								xmlns="http://www.w3.org/2000/svg"
