@@ -4,11 +4,11 @@ export const getUser = () => {
     return instance.get(`/users`)
 }
 
-export const remove = (id:any) => {
+export const removeUser = (id:any) => {
     return instance.delete(`/users/${id}`)
 }
 
-export const update = (user: any) => {
+export const updateUser = (user: any) => {
     return instance.delete(`/users/${user.id}`, user)
 }
 

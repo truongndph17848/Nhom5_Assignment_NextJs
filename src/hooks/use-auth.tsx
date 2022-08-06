@@ -1,4 +1,5 @@
-import useSWR, { useSWRConfig } from "swr";
+import { removeUser, updateUser } from "@/api/user";
+import useSWR from "swr";
 import { login, register } from "../api/auth";
 
 export const useAuth = (options?) => {
@@ -11,9 +12,6 @@ export const useAuth = (options?) => {
         mutate([...data, account]);
     };
 
-    const profile = (id) => {
-        mutate(`/users/${id}`);
-    };
     // login
     const signin = async (user) => {
         const account = await login(user);
@@ -21,18 +19,28 @@ export const useAuth = (options?) => {
     };
 
 
-    const profiles = (url) => {
-        mutate(url)
-    }
-
     // logout
+
+    const remove = async (id :any) => {
+        if(window.confirm("Bạn có chắc chắn muốn xóa không ?")){
+            await removeUser(id);
+            const newUsers = data.filter((item: any) => item.id != id);
+            mutate(newUsers);
+        }
+        
+    };
+
+    const update = async(user: any) => {
+        await updateUser(user)
+        const newUser = data.map((item:any) => item.id === data.id ? user :item)
+    }
 
     return {
         data,
         error,
         signup,
         signin,
-        profiles,
-        profile,
+        remove,
+        update
     };
 };
