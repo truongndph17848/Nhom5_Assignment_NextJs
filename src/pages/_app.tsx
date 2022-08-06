@@ -11,6 +11,9 @@ import LayoutAdmin from "@/components/Layout/AdminLayout";
 import { Provider } from "react-redux";
 import store from "../store";
 
+ import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     const LayoutWrapper = Component.WebsiteLayout ?? WebsiteLayout;
     return (
@@ -19,6 +22,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
             <SWRConfig value={{ fetcher: async (url) => await instance.get(url) }}>
                 <Component {...pageProps} />
             </SWRConfig>
+        <ToastContainer />
         </LayoutWrapper>
         </Provider>
     );

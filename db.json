@@ -78,9 +78,9 @@
   ],
   "users": [
     {
-      "name": "minhcoka",
-      "email": "minh@gmail.com",
-      "password": "123456",
+      "email": "dung@gmail.com",
+      "password": "$2a$10$gkDnqyWvS11JO89rhOG6dehi4G.CC9Xfp90S16phuiR9sLUPKTIga",
+      "name": "dung",
       "id": 1
     }
   ]

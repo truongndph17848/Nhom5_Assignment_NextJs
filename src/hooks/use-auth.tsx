@@ -1,4 +1,5 @@
 import { removeUser, updateUser } from "@/api/user";
+import { toast } from "react-toastify";
 import useSWR from "swr";
 import { login, register } from "../api/auth";
 
@@ -22,10 +23,12 @@ export const useAuth = (options?) => {
     // logout
 
     const remove = async (id :any) => {
-        if(window.confirm("Bạn có chắc chắn muốn xóa không ?")){
+        const comfirm = window.confirm('Bạn chắc chắn muốn xóa chứ')
+            if(comfirm){
             await removeUser(id);
             const newUsers = data.filter((item: any) => item.id != id);
             mutate(newUsers);
+            toast.success('Bạn đã xóa thành công')
         }
         
     };
