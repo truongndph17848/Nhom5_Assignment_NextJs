@@ -45,7 +45,7 @@ const Login = () => {
                             <div className="mb-6">
                                 <button className="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Đăng nhập</button>
                             </div>
-                            <p className="text-sm text-center text-gray-400">Bạn chưa có tài khoản? <a href="/admin/products" className="text-indigo-400 focus:outline-none focus:underline focus:text-indigo-500 dark:focus:border-indigo-800 hover:text-orange-700">Đăng kí</a>.</p>
+                            <p className="text-sm text-center text-gray-400">Bạn chưa có tài khoản? <a href="register" className="text-indigo-400 focus:outline-none focus:underline focus:text-indigo-500 dark:focus:border-indigo-800 hover:text-orange-700">Đăng kí</a>.</p>
                         </form>
                     </div>
                 </div>

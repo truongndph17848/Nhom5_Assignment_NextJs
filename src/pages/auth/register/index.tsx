@@ -56,7 +56,7 @@ const Register = ({ users }: UserProps) => {
                             <div className="mb-6">
                                 <button className="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">Đăng Kí</button>
                             </div>
-                            <p className="text-sm text-center text-gray-400">Bạn đã có tài khoản? <a href="/signin" className="text-indigo-400 focus:outline-none focus:underline focus:text-indigo-500 dark:focus:border-indigo-800 hover:text-orange-700">Đăng nhập</a>.</p>
+                            <p className="text-sm text-center text-gray-400">Bạn đã có tài khoản? <a href="login" className="text-indigo-400 focus:outline-none focus:underline focus:text-indigo-500 dark:focus:border-indigo-800 hover:text-orange-700">Đăng nhập</a>.</p>
                         </form>
                     </div>
                 </div>

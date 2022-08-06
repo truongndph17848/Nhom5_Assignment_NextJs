@@ -1,87 +1,83 @@
 {
-  "products": [
-    {
-      "id": 1,
-      "name": "Áo Thun Basic",
-      "price": "132133555",
-      "img": "https://cf.shopee.vn/file/28125ada8ed680b446a22b7e5dba8499_tn",
-      "status": "Còn hàng",
-      "desc": ""
-    },
-    {
-      "id": 2,
-      "name": "Áo Sweater Nam Nữ",
-      "price": "210,000 VNĐ",
-      "img": "https://cf.shopee.vn/file/4b15e1971f38604c9b74eaff88a0f34f",
-      "status": "Hết hàng"
-    },
-    {
-      "id": 3,
-      "name": "Quần Sort Nam",
-      "price": "120,000 VNĐ",
-      "img": "https://bizweb.dktcdn.net/thumb/1024x1024/100/369/522/products/quan-short-nu-mau-den-dkmv-short-basic-1eb4e24c-7159-4acb-8c80-7844f7234ecb.png?v=1605687854023",
-      "status": "Hết hàng"
-    },
-    {
-      "id": 4,
-      "name": "Quầb Bò Nam ",
-      "price": "200,000 VNĐ",
-      "img": "https://defoxx.vn/upload/jean%20defoxx%20xanh%20nh%E1%BA%A1t%20wash%20-%201_-17-03-2021-14-38-05.jpg",
-      "status": "Còn hàng"
-    },
-    {
-      "id": 5,
-      "name": "Áo Hoodie",
-      "price": "250,000 VNĐ",
-      "img": "https://ae01.alicdn.com/kf/Hc478a27f4a414a45940a3423df206bb7v/M-u-o-Kho-c-Hoodie-en-o-Hoodie-C-o-Thun-C-o-Unisex-Oversize.jpg_Q90.jpg_.webp",
-      "status": "Còn hàng"
-    },
-    {
-      "id": 6,
-      "name": "Áo khoác Sweater",
-      "price": "180,000 VNĐ",
-      "img": "http://bizweb.dktcdn.net/thumb/grande/100/287/440/products/jacket2.jpg?v=1584523063410",
-      "status": "Hết hàng"
-    },
-    {
-      "id": 7,
-      "name": "Quần Kaki ",
-      "price": "280,000 VNĐ",
-      "img": "https://www.hnf.vn/res/product/album/7DFDCDBE.jpg",
-      "status": "Còn hàng"
-    },
-    {
-      "id": 8,
-      "name": "Áo Polo",
-      "price": "200,000 VNĐ",
-      "img": "https://dosi-in.com/file/detailed/386/dosiin-somehow-ao-polo-nam-inf-raglan-bbc-chat-thun-cotton-day-dan-co-gian-pl-somehow-386525386525.jpg?w=1000&h=1000&fit=fill&fm=webp",
-      "status": "Hết hàng"
-    }
-  ],
-  "categories": [
-    {
-      "id": 1,
-      "name": "Áo nam "
-    },
-    {
-      "id": 2,
-      "name": "Áo nữ"
-    },
-    {
-      "id": 3,
-      "name": "Áo thun"
-    },
-    {
-      "name": "áo sweater",
-      "id": 4
-    }
-  ],
-  "users": [
-    {
-      "email": "dung@gmail.com",
-      "password": "$2a$10$gkDnqyWvS11JO89rhOG6dehi4G.CC9Xfp90S16phuiR9sLUPKTIga",
-      "name": "dung",
-      "id": 1
-    }
-  ]
+    "products": [{
+            "id": 1,
+            "name": "Áo Thun Basic",
+            "price": "132133555",
+            "img": "https://cf.shopee.vn/file/28125ada8ed680b446a22b7e5dba8499_tn",
+            "status": "Còn hàng",
+            "desc": ""
+        },
+        {
+            "id": 2,
+            "name": "Áo Sweater Nam Nữ",
+            "price": "210,000 VNĐ",
+            "img": "https://cf.shopee.vn/file/4b15e1971f38604c9b74eaff88a0f34f",
+            "status": "Hết hàng"
+        },
+        {
+            "id": 3,
+            "name": "Quần Sort Nam",
+            "price": "120,000 VNĐ",
+            "img": "https://bizweb.dktcdn.net/thumb/1024x1024/100/369/522/products/quan-short-nu-mau-den-dkmv-short-basic-1eb4e24c-7159-4acb-8c80-7844f7234ecb.png?v=1605687854023",
+            "status": "Hết hàng"
+        },
+        {
+            "id": 4,
+            "name": "Quầb Bò Nam ",
+            "price": "200,000 VNĐ",
+            "img": "https://defoxx.vn/upload/jean%20defoxx%20xanh%20nh%E1%BA%A1t%20wash%20-%201_-17-03-2021-14-38-05.jpg",
+            "status": "Còn hàng"
+        },
+        {
+            "id": 5,
+            "name": "Áo Hoodie",
+            "price": "250,000 VNĐ",
+            "img": "https://ae01.alicdn.com/kf/Hc478a27f4a414a45940a3423df206bb7v/M-u-o-Kho-c-Hoodie-en-o-Hoodie-C-o-Thun-C-o-Unisex-Oversize.jpg_Q90.jpg_.webp",
+            "status": "Còn hàng"
+        },
+        {
+            "id": 6,
+            "name": "Áo khoác Sweater",
+            "price": "180,000 VNĐ",
+            "img": "http://bizweb.dktcdn.net/thumb/grande/100/287/440/products/jacket2.jpg?v=1584523063410",
+            "status": "Hết hàng"
+        },
+        {
+            "id": 7,
+            "name": "Quần Kaki ",
+            "price": "280,000 VNĐ",
+            "img": "https://www.hnf.vn/res/product/album/7DFDCDBE.jpg",
+            "status": "Còn hàng"
+        },
+        {
+            "id": 8,
+            "name": "Áo Polo",
+            "price": "200,000 VNĐ",
+            "img": "https://dosi-in.com/file/detailed/386/dosiin-somehow-ao-polo-nam-inf-raglan-bbc-chat-thun-cotton-day-dan-co-gian-pl-somehow-386525386525.jpg?w=1000&h=1000&fit=fill&fm=webp",
+            "status": "Hết hàng"
+        }
+    ],
+    "categories": [{
+            "id": 1,
+            "name": "Áo nam "
+        },
+        {
+            "id": 2,
+            "name": "Áo nữ"
+        },
+        {
+            "id": 3,
+            "name": "Áo thun"
+        },
+        {
+            "name": "áo sweater",
+            "id": 4
+        }
+    ],
+    "users": [{
+        "email": "dung@gmail.com",
+        "password": "$2a$10$gkDnqyWvS11JO89rhOG6dehi4G.CC9Xfp90S16phuiR9sLUPKTIga",
+        "name": "dung",
+        "id": 1
+    }]
 }
