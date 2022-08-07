@@ -1,8 +1,9 @@
+import { User } from "@/models/User";
 import instance from "./instance";
 
-export const register = (user) => {
-    return instance.post("/signup",user);
+export const signup = (user: User) => {
+    return instance.post("/register",user);
 }
 export const login = (user: { email: string; password: string }) => {
-    return instance.post("/signin",user);
+    return instance.post("/login",user);
 }
