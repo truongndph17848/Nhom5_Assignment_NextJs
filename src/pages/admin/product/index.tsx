@@ -68,7 +68,7 @@ const listProduct = ({ products }: ProductsProps) => {
                       </td>
                       <td className='border '>
                         <button className='bg-red-300 px-2 py-2 text-center border' onClick={() => remove(item._id)}>Delete</button>
-                        <button className="bg-blue-300 px-2 py-2 text-center border "> <Link href={`product/${item.id}`}>Edit</Link></button>
+                        <button className="bg-blue-300 px-2 py-2 text-center border "> <Link href={`product/${item._id}`}>Edit</Link></button>
 
 
                       </td>

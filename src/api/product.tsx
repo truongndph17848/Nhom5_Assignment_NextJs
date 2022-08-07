@@ -1,3 +1,4 @@
+import { Product } from "@/models/Product";
 import instance from "./instance";
 
 // export const getAll = () => {
@@ -12,8 +13,8 @@ export const removeItem = (id: any) => {
 export const read = (id: any) => {
     return instance.get(`/products/${id}`);
 };
-export const update = (product: any) => {
-    return instance.put(`/products/${product.id}`, product);
+export const update = (product: Product) => {
+    return instance.put(`/products/${product._id}`, product);
 };
 export const searchProduct = (search: any) => {
     const url = `/search?q=${search}`;
