@@ -2,6 +2,7 @@ import useProducts from '@/hooks/use-product';
 import WebsiteLayout from '@/components/Layout/WebsiteLayout';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
+import Slide from '@/components/Slider';
 
 type Props = {
 	categories: any[]
@@ -13,6 +14,8 @@ const Home = ({ categories }: Props) => {
 
 
 	return (
+		<>
+		<Slide/>
 		<div className="grid grid-cols-5 gap-4">
 			<div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased  text-gray-800">
 				<div className="flex flex-col left-0 h-full w-64 bg-white border-r">
@@ -75,6 +78,7 @@ const Home = ({ categories }: Props) => {
 				</div>
 			</div>
 		</div>
+		</>
 	);
 };
 
