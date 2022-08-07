@@ -67,7 +67,7 @@ const Home = ({ categories }: Props) => {
 									<Link href={`products/${item._id}`}>
 										<h3 className="cursor-pointer text-sm text-gray-700">{item.name}</h3>
 									</Link>
-									<p className="text-sm font-bold text-red-900 ">
+									<p className="text-lg font-bold text-red-900 ">
 										{item.pricenew}<span className="line-through text-gray-500">{item.priceold}</span>
 									</p>
 								</div>
