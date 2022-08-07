@@ -1,4 +1,5 @@
 import { add, removeItem, update } from "@/api/product";
+import { Product } from "@/models/Product";
 import useSWR from "swr";
 const useProducts = (options?) => {
     const { data, error, mutate } = useSWR("/products", { dedupingInterval: 2000, ...options });
@@ -14,9 +15,9 @@ const useProducts = (options?) => {
             mutate(newProducts);
         }
     };
-    const editProduct = async (product: any) => {
+    const editProduct = async (product: Product) => {
         await update(product)
-        mutate(data.map((item: any) => (item.id === data.id ? product : item)))
+        mutate(data.map((item: Product) => (item.id === data.id ? product : item)))
     }
     return {
         data,

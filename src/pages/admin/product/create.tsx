@@ -94,7 +94,7 @@ const creatProducts = ({ products }: ProductsProps) => {
 
                 <div className="flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5">
                     <button className="w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2">Cancel</button>
-                    <button className="w-auto bg-orange-700 hover:bg-orange-500 rounded-lg shadow-xl font-medium text-white px-4 py-2">Create</button>
+                    <button className="w-auto bg-orange-700 hover:bg-orange-500 rounded-lg shadow-xl font-medium text-white px-4 py-2">update</button>
                 </div>
             </form>
         </div>
