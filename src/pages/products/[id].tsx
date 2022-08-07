@@ -20,6 +20,8 @@ function ProductDetail(props) {
         slidesToScroll: 1
       };
 
+      
+
     const router = useRouter();
     const { id } = router.query
     const { data, error } = useSWR(id ? `/products/${id}` : null);
@@ -30,10 +32,10 @@ function ProductDetail(props) {
 
     
 const product_current = {
-    id: data?.id,
+    id: data?._id,
     img: data?.img,
     name: data?.name,
-    price: data?.price,
+    pricenew: data?.pricenew
   };
 
   
@@ -57,7 +59,7 @@ const product_current = {
                 <img alt="ecommerce" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src={data?.img} />
                 <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                     <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{data?.name}</h1>
-                    <h2 className="text-xl title-font text-red-500 tracking-widest">{data?.price}</h2>
+                    <h2 className="text-xl title-font text-red-500 tracking-widest">{data?.pricenew}$</h2>
                     <div className="flex mb-4">
                     <span className="flex items-center">
                         <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
