@@ -8,7 +8,6 @@ type Props = {
 }
 const Home = ({ categories }: Props) => {
 	const { data, error } = useProducts();
-;
 	if (error) return <div>failed to load</div>;
 	if (!data) return <div>loading...</div>;
 
@@ -29,29 +28,20 @@ const Home = ({ categories }: Props) => {
 							{categories.map((item, index) => {
 								return (
 									<li key={index} className="px-7">
-										<a
-											href="#"
-											className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
-										>
-											<span className="ml-2 text-base font-mono tracking-wide truncate">{item?.name}</span>
-											<span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-indigo-500 bg-indigo-50 rounded-full">
-												20
-											</span>
-										</a>
+										<Link href={`/category/${encodeURIComponent(item._id)}`}>
+											<a
+												className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
+											>
+												<span className="ml-2 text-base font-mono tracking-wide truncate">{item?.name}</span>
+												<span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-indigo-500 bg-indigo-50 rounded-full">
+													20
+												</span>
+											</a>
+										</Link>
 									</li>
 								)
 							})}
-							<li className="px-7">
-								<a
-									href="#"
-									className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6"
-								>
-									<span className="ml-2 text-base font-mono tracking-wide truncate">Notifications</span>
-									<span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">
-										1.2k
-									</span>
-								</a>
-							</li>
+
 						</ul>
 					</div>
 				</div>
@@ -92,7 +82,7 @@ Home.WebsiteLayout = WebsiteLayout;
 
 export const getStaticProps: GetStaticProps = async () => {
 	const res = await fetch('http://localhost:8000/api/categories')
-	const categories = await res.json()	
+	const categories = await res.json()
 
 	return {
 		props: {
