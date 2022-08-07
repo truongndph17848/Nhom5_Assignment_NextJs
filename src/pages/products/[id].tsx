@@ -19,10 +19,10 @@ function ProductDetail(props) {
     if (!data) <div>Loading...</div>;
     if (error) <div>Error</div>;
     const product_current = {
-        id: data?.id,
+        id: data?._id,
         img: data?.img,
         name: data?.name,
-        price: data?.price,
+        price: data?.pricenew,
     };
     return (
         <div>

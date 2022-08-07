@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import * as actionType from "../actions/actionType";
 
 
@@ -17,7 +18,10 @@ const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case actionType.BUY_PRODUCT:
             const productInCart = state.cartAr.find(
-                (p) => p.id === action.payload.id
+                (p) => p.id === action.payload.id,
+
+                localStorage.setItem('cart', JSON.stringify(action.payload)),
+                toast.success(" thêm sp vào giỏ hàng thành công "),
 
             );
             if (!productInCart) {
