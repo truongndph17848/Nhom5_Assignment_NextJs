@@ -8,11 +8,11 @@ type Props = {
 }
 const Home = ({ categories }: Props) => {
 	const { data, error } = useProducts();
-	console.log(data);
+;
 	if (error) return <div>failed to load</div>;
 	if (!data) return <div>loading...</div>;
 
-	console.log(categories)
+
 	return (
 		<div className="grid grid-cols-5 gap-4">
 			<div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased  text-gray-800">
@@ -92,7 +92,7 @@ Home.WebsiteLayout = WebsiteLayout;
 
 export const getStaticProps: GetStaticProps = async () => {
 	const res = await fetch('http://localhost:8000/api/categories')
-	const categories = await res.json()
+	const categories = await res.json()	
 
 	return {
 		props: {

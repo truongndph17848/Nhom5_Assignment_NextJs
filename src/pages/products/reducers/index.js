@@ -6,6 +6,11 @@ const initialState = {
 
     // cartAr: localStorage.getItem("cart") ?
     // JSON.parse(localStorage.getItem("cart")) : [],
+
+
+    // if (cartAr) {
+    //     cartAr = localStorage.setItem('cart', JSON.stringify(cartAr))
+    // }
 };
 
 const cartReducer = (state = initialState, action) => {

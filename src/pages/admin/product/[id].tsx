@@ -10,7 +10,7 @@ const editProducts = (props: Props) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const router = useRouter();
     const { id } = router.query
-    console.log("id", id)
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { editProduct, } = useProducts();
     // eslint-disable-next-line react-hooks/rules-of-hooks
