@@ -1,17 +1,15 @@
+import { Category } from "@/models/Category";
 import instance from "./instance";
 
-// export const getAll = () => {
-//     return instance.get('/products');
-// }
-export const add = (category: any) => {
+export const add = (category: Category) => {
     return instance.post("/categories", category);
 };
-export const removeItem = (id: any) => {
+export const removeItem = ( id: string) => {
     return instance.delete(`/categories/${id}`);
 };
-export const read = (id: any) => {
+export const read = (id:string) => {
     return instance.get(`/categories/${id}`);
 };
-export const update = (category: any) => {
-    return instance.put(`/categories/${category.id}`, category);
+export const update = (category: Category) => {
+    return instance.put(`/categories/${category._id}`, category);
 };

@@ -1,26 +1,10 @@
 import { removeUser, updateUser } from "@/api/user";
 import { toast } from "react-toastify";
 import useSWR from "swr";
-import { login, register } from "../api/auth";
 
 export const useAuth = (options?) => {
     const { data, error, mutate } = useSWR("/users", { ...options });
 
-    // register
-
-    const signup = async (user) => {
-        const account = await register(user);
-        mutate([...data, account]);
-    };
-
-    // login
-    const signin = async (user) => {
-        const account = await login(user);
-        mutate([...data, account]);
-    };
-
-
-    // logout
 
     const remove = async (id :any) => {
         const comfirm = window.confirm('Bạn chắc chắn muốn xóa chứ')
@@ -41,8 +25,6 @@ export const useAuth = (options?) => {
     return {
         data,
         error,
-        signup,
-        signin,
         remove,
         update
     };
