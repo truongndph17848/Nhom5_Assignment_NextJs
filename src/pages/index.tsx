@@ -91,8 +91,8 @@ const Home = ({categories}: Props) => {
 Home.WebsiteLayout = WebsiteLayout;
 
 export const getStaticProps: GetStaticProps = async() => {
-	const res = await fetch('http://localhost:8000/api/categories')
-	const categories = await res.json()
+	const res = await fetch('http://localhost:3001/categories')
+	const categories = await res.json()	
 
 return {
 	props: {
