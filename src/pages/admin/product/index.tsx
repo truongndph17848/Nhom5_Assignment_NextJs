@@ -39,9 +39,7 @@ const listProduct = ({ products }: ProductsProps) => {
                     <th scope="col" className="text-base font-medium text-gray-900 px-6 py-4 text-left border">
                       PriceOld
                     </th>
-                    <th scope="col" className="text-base font-medium text-gray-900 px-6 py-4 text-left border">
-                      Trạng thái
-                    </th>
+
                     <th scope="col" className="text-base font-medium text-gray-900 px-6 py-4 text-left border">
                       Chức năng
                     </th>
@@ -63,9 +61,7 @@ const listProduct = ({ products }: ProductsProps) => {
                       <td className="text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap border">
                         {item.priceold}
                       </td>
-                      <td className="text-base text-gray-900 font-light px-6 py-4 whitespace-nowrap border">
-                        {item.status}
-                      </td>
+
                       <td className='border '>
                         <button className='bg-red-300 px-2 py-2 text-center border' onClick={() => remove(item._id)}>Delete</button>
                         <button className="bg-blue-300 px-2 py-2 text-center border "> <Link href={`product/${item._id}`}>Edit</Link></button>

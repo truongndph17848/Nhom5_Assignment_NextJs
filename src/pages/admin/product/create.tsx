@@ -11,14 +11,12 @@ type ProductsProps = {
 type inputValuves = {
     name: string,
     img: string,
-    priceNew: number,
-    priceOld: number,
-    status: string
-    desc: string, g
+    pricenew: number,
+    priceold: number,
 
-
+    desc: string,
+    category: string
 }
-
 const creatProducts = ({ products }: ProductsProps) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const router = useRouter()
@@ -29,9 +27,10 @@ const creatProducts = ({ products }: ProductsProps) => {
     if (error) return <div>failed to load</div>;
     // if (!data) return <div>loading...</div>;
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onhandleSubmit = (data: any) => {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm<inputValuves>();
+    const onhandleSubmit = (data) => {
         create(data);
+        console.log(data)
         alert('Thêm nhật thành công')
         router.push('/admin/product')
     }
@@ -58,14 +57,14 @@ const creatProducts = ({ products }: ProductsProps) => {
                 <div className="mb-3 grid grid-cols-2 gap-6">
                     <div>
                         <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Giá mới<span className="text-red-500">*</span></label><br />
-                        <input type="number" {...register('priceNew', { required: true })} className="border border-gray-300 p-2 w-full" id="price" />
-                        {errors.priceNew && <span className='text-red-600'>Không được để trống !</span>}
+                        <input type="number" {...register('pricenew', { required: true })} className="border border-gray-300 p-2 w-full" id="price" />
+                        {errors.pricenew && <span className='text-red-600'>Không được để trống !</span>}
                     </div>
                     {/* ... */}
                     <div>
                         <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Gía cũ<span className="text-red-500">*</span></label><br />
-                        <input type="number" {...register('priceOld', { required: true })} className="border border-gray-300 p-2 w-full" id="quantity" />
-                        {errors.priceOld && <span className='text-red-600'>Không được để trống !</span>}
+                        <input type="number" {...register('priceold', { required: true })} className="border border-gray-300 p-2 w-full" id="quantity" />
+                        {errors.priceold && <span className='text-red-600'>Không được để trống !</span>}
 
                     </div>
                 </div>
@@ -82,19 +81,12 @@ const creatProducts = ({ products }: ProductsProps) => {
 
                 </div>
 
-                <div className="mb-3">
-                    <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Trạng thái sản phẩm<span className="text-red-500">*</span></label><br />
-                    <select className="bg-teal p-3 rounded shadow-inner w-full" {...register('status', { required: true })} id="">
-                        <option value="">Còn hàng</option>
-                        <option value="">Hết hàng</option>
 
-                    </select>
-                </div>
 
 
                 <div className="flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5">
                     <button className="w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2">Cancel</button>
-                    <button className="w-auto bg-orange-700 hover:bg-orange-500 rounded-lg shadow-xl font-medium text-white px-4 py-2">update</button>
+                    <button className="w-auto bg-orange-700 hover:bg-orange-500 rounded-lg shadow-xl font-medium text-white px-4 py-2">Create</button>
                 </div>
             </form>
         </div>

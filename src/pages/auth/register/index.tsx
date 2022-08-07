@@ -15,17 +15,10 @@ const Register = () => {
     const router = useRouter()
     const { register, handleSubmit, formState: { errors } } = useForm<inputValues>();
 
-    const { data, error, signup } = useAuth();
-    if (error) return <div>Fail to load</div>;
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    function onSubmit(data: any): void {
-
-        signup(data);
-        router.push('/auth/login')
 
     const onSubmit: SubmitHandler<inputValues> = async (user) => {
         const data = await signup(user)
-        if(data) {
+        if (data) {
             router.push('/auth/login')
 
         }

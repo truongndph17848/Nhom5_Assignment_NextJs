@@ -35,7 +35,7 @@ const editProducts = (props: Props) => {
     }
     return (
         <div className="bg-white">
-            <h2>Thêm sản phẩm</h2>
+            <h2>Sửa sản phẩm</h2>
             <form id="form-add-pro" onSubmit={handleSubmit(onhandleSubmit)}>
                 <div className="mb-3">
                     <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Tên sản phẩm<span className="text-red-500">*</span></label><br />
@@ -80,14 +80,7 @@ const editProducts = (props: Props) => {
 
                 </div>
 
-                <div className="mb-3">
-                    <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Trạng thái sản phẩm<span className="text-red-500">*</span></label><br />
-                    <select className="bg-teal p-3 rounded shadow-inner w-full" {...register('status', { required: true })} id="">
-                        <option value="">Còn hàng</option>
-                        <option value="">Hết hàng</option>
 
-                    </select>
-                </div>
 
 
                 <div className="flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5">

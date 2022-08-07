@@ -1,9 +1,9 @@
 import { add, removeItem, update } from "@/api/product";
 import { Product } from "@/models/Product";
 import useSWR from "swr";
-const useProducts = (options?) => {
+const useProducts = (options?: any) => {
     const { data, error, mutate } = useSWR("/products", { dedupingInterval: 2000, ...options });
-    const create = async (item) => {
+    const create = async (item: Product) => {
         const product = await add(item);
         mutate([...data, product]);
     };
