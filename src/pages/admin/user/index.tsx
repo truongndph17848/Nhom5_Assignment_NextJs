@@ -6,7 +6,7 @@ type Props = {};
 
 const ListUser = (props: Props) => {
 	const { data, error, remove} = useAuth();
-	console.log(data);
+
 	if (error) return <div>failed to load</div>;
 	if (!data) return <div>loading...</div>;
 	return (

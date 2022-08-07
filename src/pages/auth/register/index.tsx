@@ -21,7 +21,7 @@ const Register = ({ users }: UserProps) => {
     if (error) return <div>Fail to load</div>;
     // eslint-disable-next-line react-hooks/rules-of-hooks
     function onSubmit(data: any): void {
-        console.log(data);
+
         signup(data);
         router.push('/auth/login')
     }

@@ -24,10 +24,10 @@ const SearchPage = () => {
 
         
       } catch (error) {
-        console.log(error);
+
       }
     })();
-    console.log(search);
+
   }, [search]);
 
     

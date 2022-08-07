@@ -15,7 +15,7 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<inputValues>();
     const onSubmit: SubmitHandler<inputValues> = async (data) => {
         const user = await login(data);
-        console.log(data);
+
         if (data) {
             localStorage.setItem('User', JSON.stringify(user))
         }

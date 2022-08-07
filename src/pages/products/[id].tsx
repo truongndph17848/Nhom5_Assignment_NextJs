@@ -25,7 +25,7 @@ function ProductDetail(props) {
     const { data, error } = useSWR(id ? `/products/${id}` : null);
     if (!data) <div>Loading...</div>;
     if (error) <div>Error</div>;
-    console.log(data);
+
 
 
     
