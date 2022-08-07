@@ -37,7 +37,7 @@ const listProduct = ({ products }: ProductsProps) => {
                       Image
                     </th>
                     <th scope="col" className=" text-base text-center  font-medium text-gray-900 px-6 py-4 text-left border ">
-                      Mô tả
+                      Phân loại
                     </th>
                     <th scope="col" className="text-base font-medium text-gray-900 px-6 py-4 text-left border">
                       Trạng thái
