@@ -1,4 +1,5 @@
-import { read } from '@/api/category';
+
+import { readCategory } from '@/api/category';
 import useCategory from '@/hooks/use-category';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -18,7 +19,8 @@ const editCategory = (props: Props) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         const getCategory = async () => {
-            const data = await read(id);
+            const data = await readCategory(id);
+            console.log(data)
             reset(data)
         }
         getCategory();
@@ -31,7 +33,7 @@ const editCategory = (props: Props) => {
     }
     return (
         <div className="bg-white">
-            <h2>Sửa sản phẩm</h2>
+            <h2>Sửa danh mục</h2>
             <form id="form-add-pro" onSubmit={handleSubmit(onhandleSubmit)}>
                 <div className="mb-3">
                     <label className="uppercase md:text-sm text-xs text-gray-500 text-gray-600 font-semibold mb-1">Tên danh mục<span className="text-red-500">*</span></label><br />

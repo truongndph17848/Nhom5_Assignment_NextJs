@@ -4,7 +4,7 @@ import instance from "./instance";
 // export const getAll = () => {
 //     return instance.get('/products');
 // }
-export const add = (product: any) => {
+export const add = (product: Product) => {
     return instance.post("/products", product);
 };
 export const removeItem = (id: any) => {
